@@ -33,8 +33,6 @@ fi
 
 # Installation 
 
-die "End of Script"
-
 echo "Set up Locale for Installer"
 loadkeys uk
 timedatectl set-ntp true
@@ -88,3 +86,17 @@ pacstrap /mnt base
 echo "Generating fstab..."
 genfstab -U /mnt >> /mnt/etc/fstab
 
+
+echo "Downloading Chroot Script"
+curl https://raw.githubusercontent.com/trickeydan/dotfiles/master/installer2.sh > /mnt/installer2.sh
+chmod +x /mnt/installer2.sh
+
+echo "Chrooting"
+arch-chroot /mnt /installer2.sh
+
+echo "Cleaning up"
+rm /mnt/installer2.sh
+
+echo "Install Complete."
+sleep 10
+reboot
