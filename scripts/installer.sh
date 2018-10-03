@@ -45,7 +45,7 @@ mkpart primary ext4 600MiB 100% set 2 LVM on
 echo "Configuring Full Disk Encryption" 
 
 echo -n "secure" > keyfile
-cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 16384 -d keyfile luksFormat --type luks2 --batch-mode "$DRIVE"2
+cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 4096 -d keyfile luksFormat --type luks2 --batch-mode "$DRIVE"2
 cryptsetup open "$DRIVE"2 cryptlvm -d keyfile
 
 echo "Configuring LVM"
@@ -88,7 +88,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 
 echo "Downloading Chroot Script"
-curl https://raw.githubusercontent.com/trickeydan/dotfiles/master/installer2.sh > /mnt/installer2.sh
+curl https://raw.githubusercontent.com/trickeydan/dotfiles/master/scripts/installer2.sh > /mnt/installer2.sh
 chmod +x /mnt/installer2.sh
 
 echo "Chrooting"
@@ -98,5 +98,3 @@ echo "Cleaning up"
 rm /mnt/installer2.sh
 
 echo "Install Complete."
-sleep 10
-reboot
