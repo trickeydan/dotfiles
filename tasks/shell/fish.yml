@@ -1,0 +1,58 @@
+- name: Install fish shell
+  pacman:
+    name: fish
+    state: present
+
+- name: Check for Oh My Fish installation
+  stat:
+    path: "/home/{{system.user}}/.local/share/omf"
+  register: fish_path
+
+- name: Download Oh My Fish
+  get_url:
+    url: https://get.oh-my.fish
+    dest: /tmp/fish
+    owner: "{{system.user}}"
+    mode: 0700
+  when: not fish_path.stat.exists
+
+- name: Install Oh My Fish
+  become: yes
+  become_user: "{{system.user}}"
+  command: "/tmp/fish --noninteractive"
+  when: not fish_path.stat.exists
+
+- name: Update Oh My Fish
+  become: yes
+  become_user: "{{system.user}}"
+  shell: omf update
+  args:
+    executable: /usr/bin/fish
+  when: fish_path.stat.exists
+
+- name: Check for OMF theme
+  stat:
+    path: "/home/{{system.user}}/.local/share/omf/themes/bobthefish"
+  register: theme_path
+
+- name: Install OMF theme
+  become: yes
+  become_user: "{{system.user}}"
+  shell: omf install bobthefish
+  args:
+    executable: /usr/bin/fish
+  when: not theme_path.stat.exists
+
+- name: Set fish as default user shell
+  user:
+    name: "{{system.user}}"
+    shell: /usr/bin/fish
+
+- name: Add default editor export to fish config
+  lineinfile:
+    path: "/home/{{system.user}}/.config/fish/config.fish"
+    create: yes
+    owner: "{{system.user}}"
+    mode: 0644
+    line: "export EDITOR={{system.editor}}"
+

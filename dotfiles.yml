@@ -14,3 +14,5 @@
     - import_tasks: tasks/gui/keyring.yml
     - import_tasks: tasks/gui/productivity.yml
     - import_tasks: tasks/aur/aur.yml
+    - import_tasks: tasks/shell/fish.yml
+    - import_tasks: tasks/gui/xinit.fish.yml
