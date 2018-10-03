@@ -1,0 +1,9 @@
+system:
+  user: dan
+  editor: vim
+pgp:
+  user_key: NOT_A_KEY
+  keyserver: pgp.surfnet.nl
+git:
+  name: Dan Trickey
+  email: dan@trickey.io

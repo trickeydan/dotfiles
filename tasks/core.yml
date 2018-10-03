@@ -1,0 +1,28 @@
+- name: Install Core Software
+  pacman: 
+    name: git, sudo, vim
+
+- name: Create User Account
+  user:
+    name: "{{ system.user }}"
+
+- name: Give User Sudo Access
+  lineinfile:
+    path: /etc/sudoers
+    line: "{{ system.user }} ALL=(ALL) ALL"
+
+- name: Configure Git Name
+  become: yes
+  become_user: "{{ system.user }}"
+  git_config:
+    name: user.name
+    scope: global
+    value: "{{ git.name }}"
+
+- name: Configure Git Email
+  become: yes
+  become_user: "{{ system.user }}"
+  git_config:
+    name: user.email
+    scope: global
+    value: "{{ git.email }}"

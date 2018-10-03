@@ -3,3 +3,4 @@
   tasks:
     - include_vars:
         file: vars.yml
+    - import_tasks: tasks/core.yml
