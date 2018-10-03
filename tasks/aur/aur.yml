@@ -1,0 +1,17 @@
+- name: Create aur_builder user
+  user:
+    name: aur_builder
+    group: wheel
+
+- name: Give aur_builder access to pacman
+  lineinfile:
+    path: /etc/sudoers.d/11-install-aur_builder
+    line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    validate: 'visudo -cf %s'
+
+- name: Install yay AUR helper
+  become: yes
+  become_user: aur_builder
+  aur:
+    name: yay
