@@ -1,0 +1,9 @@
+- name: Install Web Browser
+  pacman:
+    name: firefox
+
+- name: Install Email Client
+  become: yes
+  become_user: aur_builder
+  aur:
+    name: mailspring

@@ -11,4 +11,6 @@
     - import_tasks: tasks/gui/rofi.yml
     - import_tasks: tasks/gui/termite.yml
     - import_tasks: tasks/gui/fonts.yml
+    - import_tasks: tasks/gui/keyring.yml
+    - import_tasks: tasks/gui/productivity.yml
     - import_tasks: tasks/aur/aur.yml
