@@ -5,3 +5,4 @@
         file: vars.yml
     - import_tasks: tasks/core.yml
     - import_tasks: tasks/network/core.yml
+    - import_tasks: tasks/code/languages.yml
