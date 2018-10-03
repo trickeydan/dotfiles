@@ -1,0 +1,3 @@
+- name: Install fonts from pacman
+  pacman:
+    name: noto-fonts-emoji
