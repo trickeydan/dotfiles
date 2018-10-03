@@ -45,7 +45,7 @@ mkpart primary ext4 600MiB 100% set 2 LVM on
 echo "Configuring Full Disk Encryption" 
 
 echo -n "secure" > keyfile
-cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 4096 -d keyfile luksFormat --type luks2 --batch-mode "$DRIVE"2
+cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 4096 luksFormat --type luks2 "$DRIVE"2
 cryptsetup open "$DRIVE"2 cryptlvm -d keyfile
 
 echo "Configuring LVM"
