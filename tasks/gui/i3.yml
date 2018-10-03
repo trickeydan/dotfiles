@@ -6,7 +6,6 @@
     - i3-wm
     - i3lock
     - i3status
-    - rofi
 
 - name: Ensure i3 config directory exists
   file:
