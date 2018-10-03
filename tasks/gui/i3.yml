@@ -1,11 +1,6 @@
 - name: Install i3
   pacman:
-    name: "{{item}}"
-    state: present
-  with_items:
-    - i3-wm
-    - i3lock
-    - i3status
+    name: i3-wm, i3lock, i3status, feh 
 
 - name: Ensure i3 config directory exists
   file:
@@ -42,3 +37,10 @@
     owner: "{{system.user}}"
     mode: 0644
 
+- name: Desktop Background
+  copy:
+    src: "./files/gui/desktop.png"
+    dest: "/home/{{ system.user }}/.config/i3/desktop.png"
+    owner: "{{ system.user }}" 
+    group: "{{ system.user }}"
+    mode: 0644
