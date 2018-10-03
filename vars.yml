@@ -1,6 +1,7 @@
 system:
   user: dan
   editor: vim
+  hostname: dgt-laptop
   password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           62313432303463383766346362343665356233626162663634633961363631316366353365633838

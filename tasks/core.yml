@@ -7,6 +7,16 @@
     name: "{{ system.user }}"
     password: "{{ system.password }}"
 
+- name: System hostname
+  hostname: 
+    name: "{{ system.hostname }}"
+
+- name: Disable root account
+  user:
+    name: root
+    password: "!"
+
+
 - name: Give User Sudo Access
   lineinfile:
     path: /etc/sudoers
