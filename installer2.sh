@@ -48,4 +48,6 @@ sed -i "s/^GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$(blkid "
 echo "Generate grub config..."
 grub-mkconfig -o /boot/grub/grub.cfg
 
+echo "Install Basic programs" 
 
+pacman -S vim git python python-pipenv sudo -noconfirm
