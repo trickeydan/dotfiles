@@ -1,0 +1,45 @@
+- name: Install i3
+  pacman:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - i3-wm
+    - i3lock
+    - i3status
+    - rofi
+
+- name: Ensure i3 config directory exists
+  file:
+    path: "/home/{{system.user}}/.config/i3"
+    state: directory
+    owner: "{{system.user}}"
+    mode: 0755
+
+- name: Deploy i3 config
+  copy:
+    src: ./files/gui/i3
+    dest: "/home/{{system.user}}/.config/i3/config"
+    owner: "{{system.user}}"
+    mode: 0644
+
+- name: Ensure i3status config directory exists
+  file:
+    path: "/home/{{system.user}}/.config/i3status"
+    state: directory
+    owner: "{{system.user}}"
+    mode: 0755
+
+- name: Deploy i3status config
+  copy:
+    src: ./files/gui/i3status
+    dest: "/home/{{system.user}}/.config/i3status/config"
+    owner: "{{system.user}}"
+    mode: 0644
+
+- name: Deploy i3 xinitrc
+  copy:
+    src: ./files/gui/i3.xinitrc
+    dest: "/home/{{system.user}}/.xinitrc"
+    owner: "{{system.user}}"
+    mode: 0644
+

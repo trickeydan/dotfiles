@@ -1,0 +1,7 @@
+- name: Install Xorg
+  pacman:
+    name: xorg, xorg-xinit
+
+- name: Install XClip
+  pacman:
+    name: xclip
