@@ -4,8 +4,9 @@
     - include_vars:
         file: vars.yml
     - import_tasks: tasks/core.yml
-    - import_tasks: tasks/network/core.yml
     - import_tasks: tasks/code/languages.yml
+    - import_tasks: tasks/network/core.yml
+    - import_tasks: tasks/network/networkmanager.yml
     - import_tasks: tasks/gui/xorg.yml
     - import_tasks: tasks/gui/rofi.yml
     - import_tasks: tasks/gui/i3.yml

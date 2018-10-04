@@ -1,0 +1,9 @@
+- name: Install NetworkManager
+  pacman:
+    name: networkmanager, network-manager-applet
+
+- name: Enable NetworkManager service
+  systemd:
+    name: NetworkManager
+    state: started
+    enabled: yes
