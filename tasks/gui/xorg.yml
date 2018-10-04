@@ -5,3 +5,7 @@
 - name: Install XClip
   pacman:
     name: xclip
+
+- name: Install xautolock
+  pacman:
+    name: xautolock
