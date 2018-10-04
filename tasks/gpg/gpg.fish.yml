@@ -1,0 +1,14 @@
+- name: Add fish specific GPG config.
+  blockinfile:
+    path: "/home/{{system.user}}/.config/fish/config.fish"
+    create: yes
+    owner: "{{system.user}}"
+    mode: 0644
+    marker: "# {mark} GPG AGENT CONFIG"
+    block: |
+      export GPG_TTY=(tty)
+      export SSH_AUTH_SOCK=/run/user/(id -u)/gnupg/S.gpg-agent.ssh
+      gpg-connect-agent updatestartuptty /bye > /dev/null
+      set -g theme_title_display_process yes
+
+
