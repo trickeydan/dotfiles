@@ -9,8 +9,9 @@
     - import_tasks: tasks/network/networkmanager.yml
     - import_tasks: tasks/gui/xorg.yml
     - import_tasks: tasks/gui/rofi.yml
-    - import_tasks: tasks/gui/i3.yml
     - import_tasks: tasks/gui/utilities.yml
+    - import_tasks: tasks/gui/i3.yml
+    - import_tasks: tasks/gui/notifications.yml
     - import_tasks: tasks/gui/termite.yml
     - import_tasks: tasks/gui/fonts.yml
     - import_tasks: tasks/gui/keyring.yml

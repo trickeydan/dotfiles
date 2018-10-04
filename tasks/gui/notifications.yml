@@ -1,0 +1,17 @@
+- name: Install dunst
+  pacman:
+    name: dunst, libnotify
+
+- name: Ensure dunst config directory exists
+  file:
+    path: "/home/{{ system.user }}/.config/dunst"
+    state: directory
+    owner: "{{ system.user }}"
+    mode: 0755
+
+- name: Deploy dunst config
+  copy:
+    src: ./files/gui/dunst
+    dest: "/home/{{ system.user }}/.config/dunst/dunstrc"
+    owner: "{{ system.user }}"
+    mode: 0644
