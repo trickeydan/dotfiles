@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
 
 HOSTNAME='arch'
-USERNAME='dan'
 KEYBOARD='uk'
 LOCALE='en_GB.UTF-8'
 TIMEZONE='Europe/London'
@@ -50,4 +49,4 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Install Basic programs" 
 
-pacman -S vim git python python-pipenv sudo -noconfirm
+pacman -S vim git python python-pipenv sudo --noconfirm
