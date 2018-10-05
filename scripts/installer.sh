@@ -91,10 +91,4 @@ echo "Downloading Chroot Script"
 curl https://raw.githubusercontent.com/trickeydan/dotfiles/master/scripts/installer2.sh > /mnt/installer2.sh
 chmod +x /mnt/installer2.sh
 
-echo "Chrooting"
-arch-chroot /mnt /installer2.sh
-
-echo "Cleaning up"
-rm /mnt/installer2.sh
-
-echo "Install Complete."
+echo "Non-chroot complete. Please run arch-chroot /mnt /installer2.sh"
