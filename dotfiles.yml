@@ -4,23 +4,23 @@
     - include_vars:
         file: vars.yml
     - import_tasks: tasks/core.yml
+    - import_tasks: tasks/aur/aur.yml
     - import_tasks: tasks/code/languages.yml
     - import_tasks: tasks/network/core.yml
     - import_tasks: tasks/network/networkmanager.yml
     - import_tasks: tasks/gui/xorg.yml
+    - import_tasks: tasks/gui/i3.yml
     - import_tasks: tasks/gui/rofi.yml
     - import_tasks: tasks/gui/utilities.yml
-    - import_tasks: tasks/gui/i3.yml
     - import_tasks: tasks/gui/notifications.yml
     - import_tasks: tasks/gui/termite.yml
     - import_tasks: tasks/gui/fonts.yml
     - import_tasks: tasks/gui/keyring.yml
     - import_tasks: tasks/gui/productivity.yml
     - import_tasks: tasks/gui/media.yml
-    - import_tasks: tasks/aur/aur.yml
     - import_tasks: tasks/shell/fish.yml
     - import_tasks: tasks/gui/xinit.fish.yml
-    - import_tasks: tasks/security/ssh.yml
-    - import_tasks: tasks/gpg/gnupg.yml
     - import_tasks: tasks/gpg/gpg.fish.yml
+    - import_tasks: tasks/gpg/gnupg.yml
     - import_tasks: tasks/gpg/yubikey.yml
+    - import_tasks: tasks/security/ssh.yml
