@@ -26,3 +26,4 @@
     - import_tasks: tasks/security/ssh.yml
     - import_tasks: tasks/security/pass.yml
     - import_tasks: tasks/system/nvidia.yml
+    - import_tasks: tasks/system/backlight.yml

@@ -6,4 +6,3 @@
   systemd:
     name: pcscd.service
     enabled: yes
-    state: started
