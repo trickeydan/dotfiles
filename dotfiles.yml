@@ -24,3 +24,4 @@
     - import_tasks: tasks/gpg/gnupg.yml
     - import_tasks: tasks/gpg/yubikey.yml
     - import_tasks: tasks/security/ssh.yml
+    - import_tasks: tasks/security/pass.yml
