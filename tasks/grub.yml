@@ -1,9 +1,0 @@
-- name: Copy Grub Config
-  copy:
-    src: ./files/grub
-    dest: /etc/default/grub
-    owner: root
-    group: root
-    mode: 0644
-- name: Generate Grub config
-  command: grub-mkconfig -o /boot/grub/grub.cfg
