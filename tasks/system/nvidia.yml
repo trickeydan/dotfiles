@@ -1,0 +1,9 @@
+- name: Install bumblebees
+  pacman:
+    name: bbswitch, bumblebee, mesa
+
+- name: Enable Bumblebee
+  systemd:
+    name: bumblebeed
+    state: started
+    enabled: yes
