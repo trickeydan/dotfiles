@@ -28,3 +28,4 @@
     - import_tasks: tasks/system/nvidia.yml
     - import_tasks: tasks/system/backlight.yml
     - import_tasks: tasks/system/power.yml
+    - import_tasks: tasks/system/audio.yml
