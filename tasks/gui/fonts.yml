@@ -1,3 +1,9 @@
 - name: Install fonts from pacman
   pacman:
     name: noto-fonts-emoji
+
+- name: Install fonts from AUR
+  become: yes
+  become_user: aur_builder
+  aur:
+    name: otf-hermit
