@@ -56,3 +56,14 @@
     mode: 0644
     line: "export EDITOR={{system.editor}}"
 
+- name: Configure universal variables for fish shell
+  become: yes
+  become_user: "{{system.user}}"
+  shell: |
+    set -xU PIPENV_SHELL_FANCY 1
+    set -xU PIPENV_VENV_IN_PROJECT 1
+    set -xU EDITOR vim
+    set -xU VISUAL vim
+    set -xU TERMINAL termite
+  args:
+    executable: /usr/bin/fish
