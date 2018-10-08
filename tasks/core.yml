@@ -1,6 +1,6 @@
 - name: Install Core Software
   pacman: 
-    name: git, vim, base-devel
+    name: git, vim, base-devel, fuse
 
 - name: Create User Account
   user:
