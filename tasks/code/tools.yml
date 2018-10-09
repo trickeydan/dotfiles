@@ -1,0 +1,4 @@
+- name: Dependency for IHaskell
+  pacman:
+    name: lapack
+

@@ -7,6 +7,7 @@
     - import_tasks: tasks/aur/aur.yml
     - import_tasks: tasks/code/languages.yml
     - import_tasks: tasks/code/ide.yml
+    - import_tasks: tasks/code/tools.yml
     - import_tasks: tasks/network/core.yml
     - import_tasks: tasks/network/networkmanager.yml
     - import_tasks: tasks/gui/xorg.yml
