@@ -32,3 +32,4 @@
     - import_tasks: tasks/system/power.yml
     - import_tasks: tasks/system/audio.yml
     - import_tasks: tasks/system/utilities.yml
+    - import_tasks: tasks/system/print.yml
