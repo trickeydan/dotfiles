@@ -16,3 +16,10 @@
     dest: "/home/{{ system.user }}/.ssh/id_rsa.pub"
     mode: 0700
     owner: "{{ system.user }}"
+- name: Install SSH Config
+  copy:
+    src: ./files/ssh/config 
+    dest: "/home/{{ system.user }}/.ssh/config"
+    mode: 0700
+    owner: "{{ system.user }}"
+

@@ -1,0 +1,4 @@
+Host odi
+	HostName odi.trickey.io
+	User root
+	Port 22
