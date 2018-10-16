@@ -4,3 +4,7 @@
 - name: Virtualbox
   pacman:
     name: virtualbox, virtualbox-host-modules-arch
+
+- name: Pandoc
+  pacman:
+    name: pandoc
