@@ -2,3 +2,20 @@ Host odi
 	HostName odi.trickey.io
 	User root
 	Port 22
+
+Host uglogin
+	HostName uglogin.ecs.soton.ac.uk
+	User dgt1g17
+	Port 22
+
+Host soton-status
+	HostName svm-dgt1g17-status.ecs.soton.ac.uk
+	User user
+	Port 22
+	ProxyJump uglogin
+
+Host soton-soton
+	HostName svm-dgt1g17-soton.ecs.soton.ac.uk
+	User user
+	Port 22
+	ProxyJump uglogin
