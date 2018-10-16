@@ -5,6 +5,6 @@
   pacman:
     name: virtualbox, virtualbox-host-modules-arch
 
-- name: Pandoc
+- name: Typesetting
   pacman:
-    name: pandoc
+    name: pandoc, texlive-most, mupdf
