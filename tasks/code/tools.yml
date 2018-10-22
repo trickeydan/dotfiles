@@ -8,3 +8,7 @@
 - name: Typesetting
   pacman:
     name: pandoc, texlive-most, mupdf
+
+- name: SSHFS
+  pacman:
+    name: sshfs

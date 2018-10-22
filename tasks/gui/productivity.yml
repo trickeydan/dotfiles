@@ -11,3 +11,9 @@
 - name: Install Libreoffice FRESH
   pacman:
     name: libreoffice-fresh
+
+- name: Install Franz
+  become: yes
+  become_user: aur_builder
+  aur:
+    name: franz-bin

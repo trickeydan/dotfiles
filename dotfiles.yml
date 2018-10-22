@@ -33,3 +33,4 @@
     - import_tasks: tasks/system/audio.yml
     - import_tasks: tasks/system/utilities.yml
     - import_tasks: tasks/system/print.yml
+    - import_tasks: tasks/games/indie.yml
