@@ -17,3 +17,9 @@
   become_user: aur_builder
   aur:
     name: franz-bin
+
+- name: Install Typora
+  become: yes
+  become_user: aur_builder
+  aur:
+    name: typora
