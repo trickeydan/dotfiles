@@ -6,3 +6,8 @@
     name: org.cups.cupsd.service
     state: started
     enabled: yes
+- name: Install Dymo Drivers
+  become: yes
+  become_user: aur_builder
+  aur:
+    name: dymo-cups-drivers

@@ -23,3 +23,11 @@
   become_user: aur_builder
   aur:
     name: typora
+
+- name: Install Image Editors
+  pacman:
+    name: inkscape
+
+- name: Install GLabels
+  pacman:
+    name: glabels
