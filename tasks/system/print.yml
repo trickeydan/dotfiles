@@ -1,6 +1,6 @@
 - name: Install CUPS
   pacman:
-    name: cups, system-config-printer
+    name: cups, ghostscript, system-config-printer
 - name: Enable CUPS
   systemd:
     name: org.cups.cupsd.service
