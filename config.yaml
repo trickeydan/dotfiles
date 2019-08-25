@@ -35,6 +35,12 @@ dotfiles:
   f_gpg.conf:
     src: gnupg/gpg.conf
     dst: ~/.gnupg/gpg.conf
+  f_ssh_config:
+    src: ssh/config
+    dst: ~/.ssh/config
+  f_dunstrc:
+    src: config/dunst/dunstrc
+    dst: ~/.config/dunst/dunstrc
 profiles:
   dgt-laptop:
     dotfiles:
@@ -47,3 +53,5 @@ profiles:
     - f_config
     - f_compton.conf
     - f_gpg.conf
+    - f_ssh_config
+    - f_dunstrc
