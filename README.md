@@ -1,6 +1,6 @@
 # Dotfiles
 
-A collection of dodgy bash scripts and Ansible tasks.
+A collection of dodgy bash scripts.
 
 ## Installing the OS
 

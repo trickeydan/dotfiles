@@ -1,5 +1,0 @@
-- name: Install light
-  become: yes
-  become_user: aur_builder
-  aur:
-    name: light

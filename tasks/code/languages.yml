@@ -1,3 +1,0 @@
-- name: Programming Languages
-  pacman:
-    name: python, python-pipenv, ghc, stack, rustup, gcc, jdk8-openjdk, nodejs, npm

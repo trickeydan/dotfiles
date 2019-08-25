@@ -1,3 +1,0 @@
-- name: Install System Utilities
-  pacman:
-    name: zip, unzip
