@@ -1,3 +1,0 @@
-- name: Networking Software
-  pacman:
-    name: openssh, nmap, gnu-netcat, mtr, dnsutils

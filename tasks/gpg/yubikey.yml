@@ -1,8 +1,0 @@
-- name: Install yubikey software
-  pacman:
-    name: yubikey-manager, pcsclite, ccid
-
-- name: Enable smartcard services
-  systemd:
-    name: pcscd.service
-    enabled: yes

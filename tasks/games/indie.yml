@@ -1,5 +1,0 @@
-- name: Install Minecraft Launcher
-  become: yes
-  become_user: aur_builder
-  aur:
-    name: minecraft-launcher

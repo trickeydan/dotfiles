@@ -1,0 +1,40 @@
+Host mysterio
+	HostName mysterio.trickey.io
+	User dan
+
+Host uglogin
+	HostName uglogin.ecs.soton.ac.uk
+	User dgt1g17
+	Port 22
+
+Host soton0
+	HostName svm-dgt1g17-vm0.ecs.soton.ac.uk
+	User user
+	Port 22
+	ProxyJump uglogin
+
+Host soton1
+	HostName svm-dgt1g17-vm1.ecs.soton.ac.uk
+	User user
+	Port 22
+	ProxyJump uglogin
+
+# Questioneer
+
+Host qgit
+	HostName git.questioneer.dev
+	User dan
+	Port 22
+
+Host qrsupport
+	HostName runner-support.git.questioneer.dev
+	User dan
+	Port 22
+
+# New Network
+
+Host groot
+	HostName groot.home.trickey.io
+	User dan
+	Port 22
+

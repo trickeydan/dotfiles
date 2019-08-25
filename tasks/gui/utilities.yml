@@ -1,3 +1,0 @@
-- name: "Install arandr"
-  pacman:
-    name: arandr

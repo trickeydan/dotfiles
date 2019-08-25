@@ -1,3 +1,0 @@
-- name: Install XFCE Power Manager
-  pacman:
-    name: xfce4-power-manager

@@ -1,0 +1,4 @@
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
+setxkbmap gb
+xrdb /home/dan/.XResources
+exec i3
