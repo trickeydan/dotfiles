@@ -1,0 +1,49 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+dotfiles:
+  f_i3_config:
+    src: config/i3/config
+    dst: ~/.config/i3/config
+  f_i3status_config:
+    src: config/i3status/config
+    dst: ~/.config/i3status/config
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+  f_xinitrc:
+    src: xinitrc
+    dst: ~/.xinitrc
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+  f_alacritty.yml:
+    src: config/alacritty/alacritty.yml
+    dst: ~/.config/alacritty/alacritty.yml
+  f_config:
+    src: config/rofi/config
+    dst: ~/.config/rofi/config
+  f_compton.conf:
+    src: config/compton.conf
+    dst: ~/.config/compton.conf
+  f_gpg.conf:
+    src: gnupg/gpg.conf
+    dst: ~/.gnupg/gpg.conf
+profiles:
+  dgt-laptop:
+    dotfiles:
+    - f_i3_config
+    - f_i3status_config
+    - f_zshrc
+    - f_xinitrc
+    - f_gitconfig
+    - f_alacritty.yml
+    - f_config
+    - f_compton.conf
+    - f_gpg.conf

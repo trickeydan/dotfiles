@@ -1,0 +1,5 @@
+[user]
+	name = Dan Trickey
+	email = dan@trickey.io
+[commit]
+	gpgsign = True

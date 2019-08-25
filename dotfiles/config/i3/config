@@ -1,0 +1,162 @@
+set $mod Mod4
+font pango:monospace 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod 
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+q kill
+
+# Rofi things
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+a exec rofi -show drun
+bindsym $mod+p exec rofi-pass
+bindsym $mod+k exec --no-startup-id ~/.screenlayout/$(ls ~/.screenlayout | cut -d "." -f 1 | rofi -dmenu -p "Screen Layout").sh
+
+# Swap Screen
+
+bindsym $mod+Shift+k exec --no-startup-id ~/.config/i3/swap.sh
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar {
+       status_command i3status
+}
+
+set $Locker i3lock -i ~/.config/i3/desktop.png
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym p exec --no-startup-id ~/.config/i3/pranklock.sh, mode "default"
+    bindsym k exec --no-startup-id ~/.config/i3/pranklock2.sh, mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+greater move container to output right
+bindsym $mod+Shift+less move container to output left
+
+bindsym $mod+Shift+o mode "$mode_system"
+
+bindsym $mod+l exec --no-startup-id $Locker
+
+bindsym $mod+x exec --no-startup-id killall xautolock && notify-send "xautolock has been killed"
+
+
+# XPS 15 Specific Things From https://github.com/TimSimmons/.i3/blob/master/config
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# screen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+exec --no-startup-id /usr/bin/xinput set-prop 13 "Synaptics Palm Detection" 1
+exec --no-startup-id /usr/bin/xinput set-prop 13 "Synaptics Palm Dimensions" 5, 5
+exec --no-startup-id /usr/bin/xfce4-power-manager
+exec --no-startup-id /usr/bin/xinput set-prop 13 "Synaptics Area" 200, 1000, 1, 927
+
+exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.png
+exec --no-startup-id nm-applet
+exec --no-startup-id dunst
+exec --no-startup-id compton
+
+#Auto Screen Lock
+exec --no-startup-id xautolock -time 5 -locker "i3lock -i /home/dan/.config/i3/desktop.png"
+
+#Disks
+exec --no-startup-id udiskie
